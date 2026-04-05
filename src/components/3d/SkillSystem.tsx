@@ -5,17 +5,7 @@ import { Html, OrbitControls, Stars, Sparkles } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
 
-const SKILLS = [
-  { name: 'Antigravity', color: '#00ffff', proficiency: 100, category: 'AI Agent' },
-  { name: 'Claude Code', color: '#ff9000', proficiency: 100, category: 'AI Agent' },
-  { name: 'Claw AI', color: '#ff00ff', proficiency: 100, category: 'AI Agent' },
-  { name: 'Cursor AI', color: '#7c3aed', proficiency: 100, category: 'AI Agent' },
-  { name: 'Next.js', color: '#ffffff', proficiency: 98, category: 'Frontend' },
-  { name: 'React', color: '#61dafb', proficiency: 96, category: 'Frontend' },
-  { name: 'Node.js', color: '#68a063', proficiency: 94, category: 'Backend' },
-  { name: 'MongoDB', color: '#47a248', proficiency: 92, category: 'Database' },
-  { name: 'TypeScript', color: '#3178c6', proficiency: 95, category: 'Language' },
-];
+import { SKILLS } from '@/lib/skills-data';
 
 interface SkillNodeProps {
   skill: typeof SKILLS[0];
@@ -57,7 +47,7 @@ function SkillNode({ skill, position, index, scaleMultiplier }: SkillNodeProps) 
       {hovered && (
         <Html distanceFactor={8} center>
           <div className="pointer-events-none bg-black/90 backdrop-blur-md border border-white/20 rounded-2xl p-4 w-48 shadow-[0_0_30px_rgba(0,0,0,0.5)] border-t-cyan-400">
-            <p className="text-white font-black text-sm text-center uppercase tracking-wider">{skill.name}</p>
+            <p className="text-white font-black text-sm text-center tracking-wider">{skill.name}</p>
             <p className="text-cyan-400 text-[10px] text-center mb-3 font-bold tracking-widest">{skill.category}</p>
             <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
               <motion.div

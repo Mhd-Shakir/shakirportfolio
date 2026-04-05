@@ -99,7 +99,7 @@ function ProjectCard({ project, position, index, isMobile }: ProjectCardProps) {
               <div className="text-[11px] font-black uppercase tracking-[0.4em] opacity-30 text-white">Project // {index + 1}</div>
             </div>
 
-            <h3 className="text-white font-black text-xl uppercase tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all"
+            <h3 className="text-white font-black text-xl tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all"
                 style={{ backgroundImage: hovered ? `linear-gradient(to right, ${project.color}, #fff)` : 'none' }}>
               {project.title}
             </h3>
@@ -110,7 +110,7 @@ function ProjectCard({ project, position, index, isMobile }: ProjectCardProps) {
 
             <div className="flex flex-wrap gap-2.5 mb-8">
               {project.techStack.map(t => (
-                <span key={t} className="text-[10px] font-black px-4 py-1.5 rounded-xl bg-white/5 text-slate-300 border border-white/5 uppercase tracking-tighter hover:border-white/20 transition-all">
+                <span key={t} className="text-[10px] font-black px-4 py-1.5 rounded-xl bg-white/5 text-slate-300 border border-white/5 tracking-tighter hover:border-white/20 transition-all">
                   {t}
                 </span>
               ))}

@@ -14,9 +14,6 @@ export default function Navigation() {
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
           <Link href="/" className="hidden md:flex items-center gap-2 group transition-all shrink-0">
-            <div className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 group-hover:border-cyan-500/50 border border-white/5 transition-all">
-              <Home size={14} className="text-cyan-400 group-hover:text-white transition-colors" />
-            </div>
             <span className="text-lg md:text-xl font-black tracking-[0.2em] text-white hover:text-cyan-400 transition-all drop-shadow-[0_0_10px_rgba(0,255,255,0.2)]">
               SHAKIR<span className="text-fuchsia-500 font-black">.</span>
             </span>
