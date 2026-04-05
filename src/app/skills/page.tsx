@@ -73,7 +73,7 @@ export default function SkillsPage() {
               <div className="space-y-5 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {SKILLS.map((skill, index) => (
                   <div key={skill.name} className="group">
-                    <div className="flex justify-between text-[10px] font-black tracking-widest mb-2 group-hover:text-white transition-colors">
+                    <div className="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2 group-hover:text-white transition-colors">
                       <span className="text-slate-400 group-hover:text-cyan-400 transition-colors">{skill.name}</span>
                       <span className="text-cyan-400">{skill.proficiency}%</span>
                     </div>
@@ -97,7 +97,7 @@ export default function SkillsPage() {
             className="group relative flex items-center justify-center gap-3 px-10 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all active:scale-95 overflow-hidden backdrop-blur-xl"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-fuchsia-500/20 to-indigo-500/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <span className="relative text-white font-black text-[10px] tracking-[0.4em]">
+            <span className="relative text-white font-black text-[10px] tracking-[0.4em] uppercase">
               {showSkills ? 'Close' : 'View Skills'}
             </span>
             <div className={`relative w-2 h-2 rounded-full transition-all duration-500 ${showSkills ? 'bg-fuchsia-500 rotate-[135deg] scale-125' : 'bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,0.8)]'}`} />

@@ -47,7 +47,7 @@ function SkillNode({ skill, position, index, scaleMultiplier }: SkillNodeProps) 
       {hovered && (
         <Html distanceFactor={8} center>
           <div className="pointer-events-none bg-black/90 backdrop-blur-md border border-white/20 rounded-2xl p-4 w-48 shadow-[0_0_30px_rgba(0,0,0,0.5)] border-t-cyan-400">
-            <p className="text-white font-black text-sm text-center tracking-wider">{skill.name}</p>
+            <p className="text-white font-black text-sm text-center uppercase tracking-wider">{skill.name}</p>
             <p className="text-cyan-400 text-[10px] text-center mb-3 font-bold tracking-widest">{skill.category}</p>
             <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
               <motion.div

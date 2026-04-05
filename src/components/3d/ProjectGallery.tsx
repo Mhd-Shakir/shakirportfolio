@@ -13,7 +13,7 @@ const PROJECTS = [
     description: 'Advanced MERN ecosystem with secure Stripe integration, real-time logistics analytics, and dynamic inventory sync.',
     techStack: ['Next.js 15', 'MongoDB', 'Stripe', 'Tailwind v4'],
     liveUrl: 'https://demo.com',
-    githubUrl: 'https://github.com/murshidmm34-spec',
+    githubUrl: 'https://github.com/Mhd-Shakir',
     color: '#00ffff',
   },
   {
@@ -23,7 +23,7 @@ const PROJECTS = [
     description: 'Next-gen social platform with AI-driven content feeds, real-time WebSocket communication, and biometric security.',
     techStack: ['React', 'Node.js', 'Socket.io', 'OpenAI'],
     liveUrl: 'https://demo.com',
-    githubUrl: 'https://github.com/murshidmm34-spec',
+    githubUrl: 'https://github.com/Mhd-Shakir',
     color: '#ff00ff',
   },
   {
@@ -33,7 +33,7 @@ const PROJECTS = [
     description: 'Professional Multi-tenant SaaS featuring Kanban boards, automated workflow triggers, and enterprise-grade encryption.',
     techStack: ['TypeScript', 'Prisma', 'PostgreSQL', 'Redux'],
     liveUrl: 'https://demo.com',
-    githubUrl: 'https://github.com/murshidmm34-spec',
+    githubUrl: 'https://github.com/Mhd-Shakir',
     color: '#7c3aed',
   },
   {
@@ -43,7 +43,7 @@ const PROJECTS = [
     description: 'High-performance React Native application for multi-platform health monitoring and real-time biometric syncing.',
     techStack: ['React Native', 'Expo', 'Reanimated', 'Node.js'],
     liveUrl: 'https://demo.com',
-    githubUrl: 'https://github.com/murshidmm34-spec',
+    githubUrl: 'https://github.com/Mhd-Shakir',
     color: '#f59e0b',
   },
 ];
@@ -99,7 +99,7 @@ function ProjectCard({ project, position, index, isMobile }: ProjectCardProps) {
               <div className="text-[11px] font-black uppercase tracking-[0.4em] opacity-30 text-white">Project // {index + 1}</div>
             </div>
 
-            <h3 className="text-white font-black text-xl tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all"
+            <h3 className="text-white font-black text-xl uppercase tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all"
                 style={{ backgroundImage: hovered ? `linear-gradient(to right, ${project.color}, #fff)` : 'none' }}>
               {project.title}
             </h3>
@@ -110,7 +110,7 @@ function ProjectCard({ project, position, index, isMobile }: ProjectCardProps) {
 
             <div className="flex flex-wrap gap-2.5 mb-8">
               {project.techStack.map(t => (
-                <span key={t} className="text-[10px] font-black px-4 py-1.5 rounded-xl bg-white/5 text-slate-300 border border-white/5 tracking-tighter hover:border-white/20 transition-all">
+                <span key={t} className="text-[10px] font-black px-4 py-1.5 rounded-xl bg-white/5 text-slate-300 border border-white/5 uppercase tracking-tighter hover:border-white/20 transition-all">
                   {t}
                 </span>
               ))}

@@ -8,10 +8,10 @@ const CanvasWrapper = dynamic(() => import('@/components/3d/CanvasWrapper'), { s
 const StarScene = dynamic(() => import('@/components/3d/StarScene'), { ssr: false });
 
 const SOCIALS = [
-  { icon: GitBranch, label: 'GitHub', href: 'https://github.com/murshidmm34-spec', color: '#ffffff' },
-  { icon: Briefcase, label: 'LinkedIn', href: 'https://linkedin.com/in/murshid-m', color: '#0077b5' },
-  { icon: Camera, label: 'Instagram', href: 'https://instagram.com/__murshid__m___', color: '#e1306c' },
-  { icon: Mail, label: 'Email', href: 'mailto:murshidmm34@gmail.com', color: '#00ffff' },
+  { icon: GitBranch, label: 'GitHub', href: 'https://github.com/Mhd-Shakir', color: '#ffffff' },
+  { icon: Briefcase, label: 'LinkedIn', href: 'https://linkedin.com/in/shakirfikavo', color: '#0077b5' },
+  { icon: Camera, label: 'Instagram', href: 'https://instagram.com/shaaakir.___', color: '#e1306c' },
+  { icon: Mail, label: 'Email', href: 'mailto:shakirfikavo@gmail.com', color: '#00ffff' },
 ];
 
 export default function ContactPage() {

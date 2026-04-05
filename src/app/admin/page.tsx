@@ -254,7 +254,7 @@ export default function AdminPage() {
                           <div className="flex items-center gap-5">
                             <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center font-black text-fuchsia-400 border border-white/10 group-hover:bg-fuchsia-500 group-hover:text-black transition-all"><Mail size={20} /></div>
                             <div>
-                               <h3 className="text-2xl font-black tracking-tighter uppercase">{item.name}</h3>
+                               <h3 className="text-2xl font-black tracking-tighter">{item.name}</h3>
                                <div className="flex flex-col gap-0.5 mt-1 opacity-70">
                                  <p className="text-cyan-400 text-[10px] font-black uppercase tracking-widest leading-none mb-1">{item.email}</p>
                                  {item.phone ? (
@@ -344,7 +344,7 @@ export default function AdminPage() {
                         <div className="flex items-center justify-between mb-2">
                            <div className="flex items-center gap-5">
                              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center font-black text-cyan-400 border border-white/10 group-hover:bg-cyan-500 group-hover:text-black transition-all">0{i+1}</div>
-                             <h3 className="text-2xl sm:text-3xl font-black tracking-tighter uppercase">{item.title || item.name}</h3>
+                             <h3 className="text-2xl sm:text-3xl font-black tracking-tighter">{item.title || item.name}</h3>
                            </div>
                            <div className="flex items-center gap-2">
                               <button onClick={() => startEdit(item)} className="p-3 text-slate-700 hover:text-cyan-400 transition-colors"><Plus size={20} className="rotate-45" /></button>
