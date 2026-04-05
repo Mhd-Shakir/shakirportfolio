@@ -62,12 +62,12 @@ export default function HomePage() {
       </AnimatePresence>
 
       {/* Hero content overlay */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left pointer-events-none mb-12 sm:mb-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left pointer-events-none mb-24 md:mb-0">
         <motion.div
            initial={{ opacity: 0, x: -50 }}
            animate={{ opacity: 1, x: 0 }}
            transition={{ duration: 1, ease: 'easeOut' }}
-           className="flex flex-col gap-4 md:gap-6"
+           className="flex flex-col gap-4 md:gap-8"
         >
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -77,7 +77,7 @@ export default function HomePage() {
           >
             <span className="w-8 h-[2px] bg-cyan-400 hidden sm:block" />
             <p className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-cyan-400 uppercase leading-none">
-              Senior Full-Stack Engineer
+               Senior Full-Stack Engineer
             </p>
           </motion.div>
 
@@ -85,11 +85,11 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-[2.2rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter sm:tracking-tight uppercase shadow-2xl"
+            className="text-[2.2rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.8] tracking-tighter uppercase drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
           >
-            <span className="text-white block drop-shadow-[0_10px_30px_rgba(255,255,255,0.1)]">MUHAMMED</span>
-            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-indigo-500 pb-4">
-              SHAKIR
+            <span className="text-white block">MUHAMMED</span>
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-indigo-500 pb-2 md:pb-6">
+               SHAKIR
             </span>
           </motion.h1>
 
@@ -97,7 +97,7 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="text-slate-400 max-w-lg text-[11px] sm:text-lg lg:text-xl leading-relaxed md:border-l-2 border-fuchsia-500 md:pl-8 px-2 md:px-0 font-medium opacity-80"
+            className="text-slate-400 max-w-sm sm:max-w-lg text-[11px] sm:text-lg lg:text-xl leading-relaxed md:border-l-2 border-fuchsia-500 md:pl-8 px-4 md:px-0 font-medium opacity-80"
           >
             Building immersive 3D architectures, resilient engineering solutions, and premium digital legacies.
           </motion.p>

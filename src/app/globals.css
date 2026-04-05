@@ -5,6 +5,7 @@
   --color-neon-pink: #ff00ff;
   --color-neon-purple: #7c3aed;
   --font-sans: 'Outfit', system-ui, sans-serif;
+  --breakpoint-xs: 480px;
 }
 
 /* Neon text utilities */

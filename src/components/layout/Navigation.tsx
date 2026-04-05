@@ -5,12 +5,12 @@ import { Home } from 'lucide-react';
 
 export default function Navigation() {
   return (
-    <div className="fixed top-4 left-4 right-4 z-50 flex justify-center pointer-events-none">
+    <div className="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none px-4">
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full max-w-6xl py-3 px-5 sm:px-10 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.8)] pointer-events-auto"
+        className="w-full max-w-7xl py-3 px-5 sm:px-10 bg-black/80 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.8)] pointer-events-auto"
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
           <Link href="/" className="hidden md:flex items-center gap-2 group transition-all shrink-0">
