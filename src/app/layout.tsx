@@ -2,10 +2,11 @@ import './globals.css';
 import Navigation from '@/components/layout/Navigation';
 import HomeArrow from '@/components/layout/HomeArrow';
 import CustomCursor from '@/components/layout/CustomCursor';
-import { Outfit } from 'next/font/google';
+import { Outfit, Roboto } from 'next/font/google';
 import type { Metadata } from 'next';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
+const roboto = Roboto({ subsets: ['latin'], weight: ['900'], variable: '--font-roboto' });
 
 export const metadata: Metadata = {
   title: 'Muhammed Shakir | Senior MERN & Next.js Expert',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={outfit.variable}>
+    <html lang="en" className={`${outfit.variable} ${roboto.variable}`}>
       <body className="font-[--font-outfit] bg-[#020617] text-white antialiased">
         <CustomCursor />
         <Navigation />

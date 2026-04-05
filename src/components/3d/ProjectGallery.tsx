@@ -99,7 +99,7 @@ function ProjectCard({ project, position, index, isMobile }: ProjectCardProps) {
               <div className="text-[11px] font-black uppercase tracking-[0.4em] opacity-30 text-white">Project // {index + 1}</div>
             </div>
 
-            <h3 className="text-white font-black text-xl uppercase tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all"
+            <h3 className="text-white font-black text-xl uppercase tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all font-[--font-roboto]"
                 style={{ backgroundImage: hovered ? `linear-gradient(to right, ${project.color}, #fff)` : 'none' }}>
               {project.title}
             </h3>

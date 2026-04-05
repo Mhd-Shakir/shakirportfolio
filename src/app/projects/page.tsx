@@ -62,7 +62,7 @@ export default function ProjectsPage() {
                     </div>
                     <span className="text-[10px] font-black tracking-widest text-slate-500 uppercase px-4 py-2 bg-white/5 rounded-full">0{i+1}</span>
                   </div>
-                  <h3 className="text-2xl sm:text-4xl font-black text-white mb-4 group-hover:text-cyan-400 transition-colors tracking-tighter">{project.title}</h3>
+                  <h3 className="text-2xl sm:text-4xl font-black text-white mb-4 group-hover:text-cyan-400 transition-colors tracking-tighter font-[--font-roboto]">{project.title}</h3>
                   <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-10 font-medium line-clamp-3">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-10">
                     {project.techStack.map((t: string) => (
