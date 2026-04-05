@@ -7,9 +7,12 @@ const CanvasWrapper = dynamic(() => import('@/components/3d/CanvasWrapper'), { s
 const StarScene = dynamic(() => import('@/components/3d/StarScene'), { ssr: false });
 
 const TIMELINE = [
-  { year: '2024–Present', role: 'Full-Stack Engineer', company: 'Freelance', desc: 'Building scalable MERN apps, Next.js platforms and React Native mobile apps for global clients.' },
-  { year: '2023–2024', role: 'MERN Stack Developer', company: 'Tech Startup', desc: 'Led frontend architecture, REST API design and MongoDB schema optimization for a SaaS platform.' },
-  { year: '2022–2023', role: 'Junior Web Developer', company: 'Digital Agency', desc: 'Developed responsive web applications and e-commerce stores using React, Node.js and Express.' },
+  { year: '2026–2027', role: 'Founder of fikavo.com', company: 'fikavocollective', desc: 'Leading a premier marketing agency to deliver data-driven growth strategies and high-impact digital campaigns for global brands.' },
+  { year: '2026–2027', role: 'Expert in Vibe Coding', company: 'Digital Frontiers', desc: 'Mastering Agentic AI workflows with Antigravity, Claude Code, Claw, and Cursor AI to redefine software creation.' },
+  { year: '2025–2026', role: 'Expert in MERN & Next.js', company: 'High-Tech Labs', desc: 'Architecting high-performance enterprise applications with the latest MERN stack and Next.js 16/Turbopack.' },
+  { year: '2024–2025', role: 'Fullstack Developer', company: 'Global Solutions', desc: 'Designing end-to-end resilient systems and distributed architectures for large-scale production environments.' },
+  { year: '2023–2024', role: 'Senior Web Developer', company: 'Innovation Hub', desc: 'Leading cross-functional engineering teams to deliver premium web experiences with cutting-edge technologies.' },
+  { year: '2022–2023', role: 'Junior Web Developer', company: 'Startup Studio', desc: 'Crafting responsive, high-quality web interfaces and mastering the fundamentals of clean, scalable code.' },
 ];
 
 const HIGHLIGHTS = [

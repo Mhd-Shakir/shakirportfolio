@@ -26,17 +26,17 @@ export default function SkillsPage() {
         </p>
       </motion.div>
 
-      {/* Right Vertical Instruction Text - Hidden on mobile to avoid clutter */}
+      {/* Right Vertical Instruction Text */}
       <motion.div
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute right-10 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-center justify-center pointer-events-none select-none"
+        className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center pointer-events-none select-none"
         style={{ writingMode: 'vertical-rl' }}
       >
         <div className="flex items-center gap-6">
           <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-cyan-500 to-transparent opacity-30" />
-          <p className="text-fuchsia-400 text-[10px] font-black tracking-[0.7em] uppercase whitespace-nowrap drop-shadow-[0_0_15px_rgba(255,0,255,0.4)]">
+          <p className="text-fuchsia-400 text-[10px] font-black tracking-[0.7em] uppercase whitespace-nowrap drop-shadow-[0_0_15px_rgba(255,0,255,0.4)] md:text-[11px]">
             touch the balls then see magic
           </p>
           <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-fuchsia-500 to-transparent opacity-30" />
