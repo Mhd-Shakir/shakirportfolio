@@ -1,65 +1,133 @@
-import Image from "next/image";
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
-export default function Home() {
+const CanvasWrapper = dynamic(() => import('@/components/3d/CanvasWrapper'), { ssr: false });
+const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), { ssr: false });
+
+export default function HomePage() {
+  const [showScrollMsg, setShowScrollMsg] = useState(false);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    const handleGesture = (e: any) => {
+      // Ignore if clicking/touching buttons or links
+      const isInteractive = e.target.closest('button') || e.target.closest('a') || e.target.closest('nav');
+      if (isInteractive) return;
+
+      setShowScrollMsg(true);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setShowScrollMsg(false), 2000);
+    };
+
+    window.addEventListener('wheel', handleGesture, { passive: true });
+    // Only trigger message on actual vertical movement, not just tap
+    let touchStartY = 0;
+    const handleTouchStart = (e: TouchEvent) => { touchStartY = e.touches[0].clientY; };
+    const handleTouchMove = (e: TouchEvent) => {
+      const touchY = e.touches[0].clientY;
+      if (Math.abs(touchY - touchStartY) > 10) {
+        handleGesture(e);
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('wheel', handleGesture);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      clearTimeout(timeout);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="w-full h-full relative overflow-hidden flex flex-col items-center justify-end sm:justify-center bg-[#020617] px-4 pb-20 sm:pb-0">
+      {/* Scroll notification - FIXED POSITION AND ANIMATION */}
+      <AnimatePresence>
+        {showScrollMsg && (
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ type: 'spring', damping: 20, stiffness: 100 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] px-8 py-3.5 bg-black/90 backdrop-blur-3xl rounded-full border border-cyan-500/50 text-cyan-400 font-black tracking-[0.3em] text-[10px] sm:text-xs uppercase shadow-[0_-10px_40px_rgba(0,255,255,0.3)] pointer-events-none whitespace-nowrap"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            ✦ sorry guys not scrolling here
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hero content overlay */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left pointer-events-none mb-12 sm:mb-0">
+        <motion.div
+           initial={{ opacity: 0, x: -50 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ duration: 1, ease: 'easeOut' }}
+           className="flex flex-col gap-4 md:gap-6"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex items-center gap-3 justify-center md:justify-start"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <span className="w-8 h-[2px] bg-cyan-400 hidden sm:block" />
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-cyan-400 uppercase leading-none">
+              Senior Full-Stack Engineer
+            </p>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-[2.2rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter sm:tracking-tight uppercase shadow-2xl"
+          >
+            <span className="text-white block drop-shadow-[0_10px_30px_rgba(255,255,255,0.1)]">MUHAMMED</span>
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-indigo-500 pb-4">
+              SHAKIR
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="text-slate-400 max-w-lg text-[11px] sm:text-lg lg:text-xl leading-relaxed md:border-l-2 border-fuchsia-500 md:pl-8 px-2 md:px-0 font-medium opacity-80"
+          >
+            Building immersive 3D architectures, resilient engineering solutions, and premium digital legacies.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="flex flex-wrap gap-4 mt-8 sm:mt-14 justify-center md:justify-start pointer-events-auto"
+          >
+            <Link href="/projects"
+              className="px-8 sm:px-14 py-4 sm:py-5 bg-gradient-to-r from-cyan-600 to-fuchsia-600 text-white font-black rounded-2xl hover:scale-105 hover:shadow-[0_15px_50px_rgba(0,255,255,0.4)] text-[10px] sm:text-sm tracking-[0.3em] uppercase shadow-lg active:scale-95 transition-all text-center"
+            >
+              PROJECTS
+            </Link>
+            <Link href="/contact"
+              className="px-8 sm:px-14 py-4 sm:py-5 border border-white/10 text-white font-black rounded-2xl hover:bg-white/5 hover:border-white/30 transition-all text-[10px] sm:text-sm tracking-[0.3em] uppercase backdrop-blur-md active:scale-95 text-center"
+            >
+              CONTACT
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* 3D Localized scene */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <CanvasWrapper>
+          <HeroScene />
+        </CanvasWrapper>
+      </div>
     </div>
   );
 }
